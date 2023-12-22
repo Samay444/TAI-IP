@@ -1,0 +1,17 @@
+card_num=input("Enter your credit card number: ")
+odd_index_sum=0
+even_index_sum=0
+card_num=list(card_num)
+for (index, value) in enumerate(card_num):
+    if index %2 != 0:
+        odd_index_sum += int(value)
+    else:
+        doubled_value = int(value) * 2
+        if doubled_value>9:
+            doubled_value-=9
+        even_index_sum += doubled_value
+total = odd_index_sum + even_index_sum
+if total % 10 == 0:
+    print("Valid Credit Card Number")
+else:
+    print("Invalid Credit Card Number")
