@@ -1,0 +1,18 @@
+from geopy.geocoders import Nominatim
+import geopy as geopy
+def find_location(address):
+    geolocator = Nominatim(user_agent="location_finder")
+    try:
+        location = geolocator.geocode(address)
+        if location:
+            print("Location Details:")
+            print(f"Address: {location.address}")
+            print(f"Latitude: {location.latitude}")
+            print(f"Longitude: {location.longitude}")
+        else:
+            print("Location not found.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+if __name__=="__main__":
+    user_address = input("Enter your Address: ")
+    find_location(user_address)
